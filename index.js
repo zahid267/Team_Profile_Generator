@@ -5,14 +5,14 @@ const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const manager = new Manager();
+/*const manager = new Manager();
 const engineer = new Engineer();
-const intern = new Intern();
+const intern = new Intern();*/
 
 // create writeFile function using promises instead of a callback function
 const writeFileAsync = util.promisify(fs.writeFile);
 let questions = [];
-const typeQuestion = {
+const Type_questions = {
   type: 'list',
   name: 'memberType',
   message: 'Which type of team member would you like to add?',
@@ -97,21 +97,7 @@ const Intern_questions = [
      message: 'What is your Intern\'s school/university name?',
    },  
  ];
- const promptUserType = () =>{
-   questions = Manager_questions;
-   console.log('Please build you team');
-   //promptUser()
-   const response = inquirer.prompt(Manager_questions);
-   
-   //.then((answers) =>{
-      manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
-      console.log(manager.getName()+", "+manager.getId()+", "+manager.getEmail()+", "+manager.officeNumber);
-      //questions = typeQuestion;
-    /*  
-    })
-    .then(() => console.log('Successfully wrote to Manager record'))
-    .catch((err) => console.error(err));*/
- }
+ 
 const promptUser = () => {
   return inquirer.prompt(questions);
 };
@@ -152,15 +138,39 @@ const generateREADME = (answers) =>
   Reach me with additional questions at: ${answers.email}
  `
 
-const init = () => {
- // promptUser()
-  promptUserType()
+const init = (tp) => {
+  questions = eval(tp+"_questions");
+  promptUser()
     .then((answers) =>{
-      console.log(answers);
+      //console.log(answers);
+      switch (tp){
+        case 'Manager':
+          const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
+        // console.log(manager.getName()+", "+manager.getId()+", "+manager.getEmail()+", "+manager.officeNumber+", "+manager.getRole());
+          init('Type');
+          break;
+        case 'Engineer':
+          const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github)
+        // console.log(engineer.getName()+", "+engineer.getId()+", "+engineer.getEmail()+", "+engineer.github+", "+engineer.getRole());
+          init('Type');
+          break;
+        case 'Intern':
+          const intern = new Intern(answers.name, answers.id, answers.email, answers.school)
+        // console.log(intern.getName()+", "+intern.getId()+", "+intern.getEmail()+", "+intern.school+", "+intern.getRole());
+          init('Type');
+          break;
+        case 'Type':
+          if(answers.memberType === 'Engineer' || answers.memberType==='Intern'){
+            init(answers.memberType);
+            break;
+          }else{
+            tp = "";
+          }
+      }
       //writeFileAsync('genREADME.md', generateREADME(answers))
     })
-    .then(() => console.log('Successfully got answers'))
+    .then(() => {if(tp===''){console.log('Successfully got answers');}})
     .catch((err) => console.error(err));
 };
 
-init();
+init('Manager');

@@ -1,0 +1,93 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  background-color: cadetblue;
+}
+header{
+  text-align: center;
+  background-color: slategray;
+  border-bottom: 10px solid navy;
+}
+
+h1{
+  font-size: 400%;
+  width: 100%;
+  
+}
+button{
+  background-color: navy;
+  color: white;
+  height:30px;
+}
+
+.container{
+  display: flex;
+  padding: 100px;
+  
+}
+.team{
+  margin: auto;
+  align-items: center;
+}
+.team div{
+  display: inline-block;
+  margin: 10px;
+  padding-left: 0px;
+  width: 200px;
+  height: 250px;
+  border-radius: 10px;
+  line-height: 1.3em;
+  font-size: 12px;
+  background-color: aliceblue;
+}
+.team div .member{
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 100%;
+  display: block;
+  background-color: blue;
+  color: white;
+  margin-bottom: 40px;
+}
+.mcard{
+  margin-top: 10px;
+}
+h2,h3,h4{
+  margin-left: 5px;
+}
+p{
+  margin-left: 5px;
+  font-weight: bold;
+  background-color: rgb(251, 252, 253);
+  font-size: 14px;
+}
+ /* Tablets - header changes color */
+ @media screen and (max-width: 992px) {
+
+} 
+/* Large smartphones - navbar changes color */
+@media screen and (max-width: 768px) {
+ body{
+   font-size: 14px;
+ } 
+ h1{
+  font-size: 300%;
+}
+
+/* Small smartphones - image placeholders change color */
+@media screen and (max-width: 576px) {
+  body{
+    font-size: 12px;
+  }
+  h1{
+    font-size: 200%;
+  } 
+  h2, h3{
+    font-size: 150%;
+  } 
+  .container{
+    margin-left: 1px;
+    margin-right: 5px;
+  }
+}

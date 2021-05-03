@@ -51,23 +51,20 @@ test/			// jest tests
 dist/               // rendered output (HTML) and CSS style sheet
 lib/				// classes
 src/				// template helper code
+Assest/   // for generated HTML page
 index.js			// runs the application
 ```
 
 The application include `Employee`, `Manager`, `Engineer`, and `Intern` classes. The tests for these classes are in 'test' directory.
 
 
-
-
 ## Review
 
-You are required to submit the following for review:
+Here are the contents for review:
 
-![Test demonstration.](./Assets/Test_Demo.mp4)
+* Class test successfull demonstration : https://drive.google.com/file/d/1u3j0zQBKOzIdy9tdmlXUidV4Vdi4Baoh/view?usp=sharing
 
-![Team Profile Generation demonstration.](./Assets/Team_Profile_Demo.mp4)
-
-* Team Profile Generation demonstration at Google drive : https://drive.google.com/file/d/1ktZP8x8IULZwzgntQgQ4Bb5dZqi2eE8_/view?usp=sharing
+* Team Profile Generation demonstration is at Google drive : https://drive.google.com/file/d/1ktZP8x8IULZwzgntQgQ4Bb5dZqi2eE8_/view?usp=sharing
 
 * A sample HTML file generated using my application is at: (Assets/Team.html).
 

@@ -208,7 +208,7 @@ const init = (tp) => {
       }
       if(tp===''){writeFileAsync('./dist/team.html', generateHTML(team))}
     })
-    .then(() => {if(tp===''){console.log('Successfully created team.html page in output folder.');}})
+    .then(() => {if(tp===''){console.log('Successfully created team.html page in dist folder.');}})
     .catch((err) => console.error(err));
 };
 

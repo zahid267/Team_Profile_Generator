@@ -31,13 +31,6 @@ WHEN I decide to finish building my team
 THEN I exit the application, and the HTML is generated
 ```
 
-## Mock-Up
-
-The following image shows a mock-up of the generated HTML’s appearance and functionality:
-
-![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./Assets/10-object-oriented-programming-homework-demo.png)
-
-The styling in the image is just an example, so feel free to add your own.
 
 ## Getting Started
 
@@ -70,10 +63,11 @@ The application include `Employee`, `Manager`, `Engineer`, and `Intern` classes.
 
 You are required to submit the following for review:
 
-![Test demonstration.](./Assets/Test-Demo.mp4)
+![Test demonstration.](./Assets/Test_Demo.mp4)
 
 ![Team Profile Generation demonstration.](./Assets/Team_Profile_Demo.mp4)
-![Team Profile Generation demonstration at Google drive.](https://drive.google.com/file/d/1ktZP8x8IULZwzgntQgQ4Bb5dZqi2eE8_/view?usp=sharing)
+
+* Team Profile Generation demonstration at Google drive : https://drive.google.com/file/d/1ktZP8x8IULZwzgntQgQ4Bb5dZqi2eE8_/view?usp=sharing
 
 * A sample HTML file generated using my application is at: (Assets/Team.html).
 
